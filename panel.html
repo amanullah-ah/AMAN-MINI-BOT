@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AMAN Panel</title>
+<style>body{font-family:system-ui;background:#0b0f14;color:#e6edf3;margin:0;padding:20px}input,button{padding:10px;border-radius:8px;border:1px solid #30363d;background:#161b22;color:#e6edf3}pre{background:#161b22;padding:12px;border-radius:8px;overflow:auto}</style></head><body>
+<h2>AMAN Panel</h2><input id="t" type="password" placeholder="AMAN_PANEL_TOKEN"> <button onclick="go()">Load</button>
+<h3>Metrics</h3><pre id="m">-</pre><h3>Logs</h3><pre id="l">-</pre>
+<script>async function go(){const h={'x-panel-token':document.getElementById('t').value};
+for(const [u,id] of [['/api/panel/metrics','m'],['/api/panel/logs?limit=50','l']]){try{const r=await fetch(u,{headers:h});document.getElementById(id).textContent=JSON.stringify(await r.json(),null,2)}catch(e){document.getElementById(id).textContent=String(e)}}}</script></body></html>

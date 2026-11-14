@@ -1,0 +1,48 @@
+{
+  "name": "aman-md-bot",
+  "version": "2.9.1",
+  "description": "AMAN HELL-MD WhatsApp Bot — persistent settings, anime metadata and video-link commands",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node --check index.js && node --check main.js && node --check config.js && node --check arslan.js && node --check plugins/song.js && node --check plugins/anime.js && node --check plugins/anime-extra-20.js && node --check plugins/anime-video-pack.js && node --check plugins/drama.js && node --check plugins/sreacts.js && node --check plugins/svotes.js && node --check plugins/islamic-cartoon-dl.js && node --check lib/pollvoter.js && node --check lib/media-dl.js && node --check lib/anime-api.js && node --check lib/reactor.js && node --check lib/welcome.js && node --check lib/botpic.js && node --check plugins/welcome-pro.js && node --check plugins/nettest.js && node --check plugins/sfollow.js",
+    "check:islamic": "node --check plugins/islamic-aman-30-pack.js",
+    "check:anime": "node --check plugins/anime.js && node --check plugins/anime-extra-20.js && node --check plugins/anime-video-pack.js",
+    "check:music": "node --check plugins/song.js",
+    "check:all": "find . -path ./node_modules -prune -o -name \"*.js\" -type f -print0 | xargs -0 -n1 node --check",
+    "check:voice": "node --check plugins/jarvis-voice.js",
+    "postinstall": "node -e \"try{require('./lib/media-dl').ensureYtDlp().then(()=>console.log('yt-dlp ready')).catch(e=>console.log('yt-dlp will be fetched on first use:',e.message))}catch(e){console.log('postinstall skipped:',e.message)}\""
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "7.0.0-rc14",
+    "axios": "latest",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "latest",
+    "express": "^4.18.2",
+    "node-fetch": "^2.7.0",
+    "sharp": "^0.32.6",
+    "path": "^0.12.7",
+    "jimp": "1.6.1",
+    "ytdl-core": "^4.11.5",
+    "node-telegram-bot-api": "^0.66.0",
+    "fs-extra": "^11.2.0",
+    "pino": "^8.17.0",
+    "@octokit/rest": "^20.0.2",
+    "denethdev-ytmp3": "1.0.3",
+    "cheerio": "latest",
+    "ruhend-scraper": "9.0.1",
+    "yt-search": "2.12.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "wa-sticker-formatter": "^4.4.4",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "file-type": "^16.5.4",
+    "edge-tts-universal": "^1.0.4",
+    "mongoose": "^8.0.0",
+    "moment-timezone": "^0.6.0",
+    "@distube/ytdl-core": "^4.16.0"
+  },
+  "engines": {
+    "node": ">=20 <25"
+  }
+}
