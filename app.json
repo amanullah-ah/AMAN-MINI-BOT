@@ -1,0 +1,18 @@
+{
+  "name": "AMAN-MD Bot",
+  "description": "SESSION ID GENERATOR FOR WHATSAPP BOTS",
+  "logo": "https://files.catbox.moe/9ykuur.jpg",
+  "repository": "https://github.com/rizolegend5-art/RIZO-MINI-BOT",
+  "keywords": ["@AMAN-MD"],
+  "success_url": "/", 
+  "buildpacks": [
+    { "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" }
+  ],
+  "env": {      
+    "MESSAGE": {
+      "description": "Msg Attached With Session ID",
+      "value": "AMAN Mini Bot",
+      "required": false 
+    }
+  }
+}

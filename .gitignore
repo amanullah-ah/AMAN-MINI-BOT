@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# secrets / env
+.env
+.env.*
+
+# WhatsApp sessions & runtime data (leak = account takeover)
+session/
+sessions/
+auth_info*/
+data/db/
+*.session.json
+
+# yt-dlp binaries and misc
+lib/bin/*
+!lib/bin/.gitkeep
+*.log
+.DS_Store
